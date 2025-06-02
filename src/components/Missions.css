@@ -1,0 +1,66 @@
+#missions {
+  padding: 50px 20px;
+  background-color: #fffaf3;
+}
+
+.miss-head {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.miss-head h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.miss-head p {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
+.cards-cont {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  gap: 30px;
+  padding: 20px;
+}
+
+.extra-card {
+  margin: 40px auto;
+  max-width: 700px;
+  padding: 25px;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  text-align: center;
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.6;
+}
+
+.extra-card span {
+  font-weight: 600;
+  color: #222;
+}
+
+.extra-card .heighlighted {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: orange;
+  margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+  .cards-cont {
+    grid-template-columns: 1fr;
+  }
+
+  .extra-card {
+    padding: 20px;
+  }
+}

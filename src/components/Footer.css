@@ -1,0 +1,98 @@
+/* Footer.css */
+
+.footer {
+  background-color: #1a1a1a; /* Very dark charcoal for contrast */
+  color: #f3f4f6;            /* Light gray text */
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding-top: 40px;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  gap: 40px;               /* Space between columns */
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+/* Each column (About, Contact, Links) */
+.footer-column {
+  flex: 1 1 250px;         /* Grow/shrink, min-width ~250px */
+  margin-bottom: 32px;
+}
+
+/* Column titles */
+.footer-heading {
+  font-size: 1.25rem;
+  color: #f59e0b;          /* Bee-yellow accent */
+  margin-bottom: 16px;
+}
+
+/* Regular paragraph text */
+.footer-text {
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #d1d5db;          /* Slightly darker gray for easier reading */
+}
+
+/* Links & list items */
+.footer-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer-links li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+/* Icon next to each item */
+.footer-icon {
+  margin-right: 8px;
+  color: #f59e0b;          /* Same yellow accent */
+  flex-shrink: 0;
+}
+
+/* Anchor text */
+.footer-link {
+  color: #f3f4f6;          /* Light text on dark background */
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+}
+
+.footer-link:hover {
+  color: #fde68a;          /* Lighter yellow on hover */
+}
+
+/* Bottom bar */
+.footer-bottom {
+  border-top: 1px solid #374151;  /* Slightly lighter than background */
+  padding: 16px 20px;
+  text-align: center;
+}
+
+.footer-bottom-text {
+  margin: 0;
+  font-size: 0.875rem;
+  color: #9ca3af;          /* Even lighter gray */
+}
+
+/* -----------------------------------
+   Responsive tweaks (≤ 768px)
+------------------------------------ */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .footer-column {
+    flex: 1 1 100%;
+    margin-bottom: 24px;
+  }
+}

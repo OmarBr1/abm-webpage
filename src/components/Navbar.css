@@ -1,0 +1,242 @@
+/* -----------------------------------------------------------
+   Navbar.css
+   - Responsive navbar with colorful styles & mobile menu
+------------------------------------------------------------- */
+
+/* 1. Root variables for easy color tweaks */
+:root {
+  --primary-yellow: #f59e0b;
+  --hover-yellow: #d97706;
+  --nav-bg-desktop: white;
+  --nav-bg-mobile: #fefce8;
+  --text-color: #1f2937;
+  --link-hover-color: var(--primary-yellow);
+  --button-bg: var(--primary-yellow);
+  --button-hover-bg: var(--hover-yellow);
+  --gradient-bg: linear-gradient(90deg, #f59e0b, #3b82f6);
+}
+
+/* 2. Navbar container */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--nav-bg-desktop);
+  border-bottom: 1px solid #eee;
+  padding: 16px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.03);
+  transition: background 0.3s ease;
+}
+
+/* When scrolling, you could switch to a gradient background if desired:
+body.scrolled .navbar {
+  background: var(--gradient-bg);
+}
+*/
+
+/* 3. Inner flex container */
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 4. Logo styling */
+.logo img {
+  height: 40px;
+  transition: transform 0.3s;
+}
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+/* 5. Nav links (desktop) */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+.nav-links ul {
+  list-style: none;
+  display: flex;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+}
+.nav-links a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+/* Underline on hover */
+.nav-links a::after {
+  content: "";
+  display: block;
+  height: 2px;
+  background-color: var(--primary-yellow);
+  transition: width 0.3s ease;
+  width: 0%;
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+}
+.nav-links a:hover {
+  color: var(--link-hover-color);
+}
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* 6. Contact button */
+.btn-contact {
+  background-color: var(--button-bg);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 6px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.btn-contact:hover {
+  background-color: var(--button-hover-bg);
+  transform: translateY(-2px);
+}
+.btn-contact:active {
+  transform: translateY(0);
+}
+
+/* 7. Hamburger toggle button (hidden on desktop) */
+.nav-toggle {
+  display: none;
+  position: relative;
+  width: 28px;
+  height: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1100; /* above the menu drawer */
+}
+.nav-toggle .bar {
+  display: block;
+  width: 100%;
+  height: 3px;
+  margin: 4px 0;
+  background-color: var(--text-color);
+  border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+/* 8. Animate hamburger → X when open */
+.nav-toggle.open .bar:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.nav-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+.nav-toggle.open .bar:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* 9. Responsive Media Queries */
+@media (max-width: 768px) {
+  /* 9.1 – Navbar background change on mobile */
+  .navbar {
+    background: var(--nav-bg-mobile);
+    padding: 12px 0;
+  }
+
+  /* 9.2 – Show hamburger, hide desktop nav-links */
+  .nav-toggle {
+    display: block;
+  }
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--nav-bg-mobile);
+    max-height: 0;
+    overflow: hidden;
+    flex-direction: column;
+    transition: max-height 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  .nav-links.active {
+    max-height: 400px; /* Enough to show all links; adjust if you add more items */
+  }
+
+  .nav-links ul {
+    flex-direction: column;
+    gap: 0;
+  }
+  .nav-links li {
+    width: 100%;
+  }
+  .nav-links a {
+    display: block;
+    padding: 14px 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  }
+  .nav-links a:last-child {
+    border-bottom: none;
+  }
+
+  /* 9.3 – Center Contact button under menu when active (optional) */
+  .btn-contact {
+    display: block;
+    margin: 16px auto 0 auto;
+  }
+}
+
+/* 10. Additional Colorful Flourishes */
+.nav-links a:focus,
+.btn-contact:focus,
+.nav-toggle:focus {
+  outline: 2px solid var(--primary-yellow);
+  outline-offset: 2px;
+}
+
+/* 11. (Optional) On scroll, switch navbar to a gradient background */
+
+body.scrolled .navbar {
+  background: var(--gradient-bg);
+  border-bottom: none;
+}
+
+.navbar {
+  background-color: #fefce8; /* very light cream, matching brand style */
+}
+
+/* Logo container adjustments */
+.logo {
+  display: flex;
+  align-items: center;
+  padding: 0; /* no extra padding by default */
+}
+
+.logo img {
+  height: 48px;             /* adjust as needed to match nav height */
+  width: auto;              /* preserve aspect ratio */
+  margin-right: 16px;       /* space between logo and nav links */
+  /* Optional: Add a subtle hover scale effect */
+  transition: transform 0.2s ease;
+}
+.logo img:hover {
+  transform: scale(1.05);
+}
+
+/* If your navbar uses a different background on mobile/desktop, 
+   ensure the logo still contrasts well */
+@media (max-width: 768px) {
+  .navbar {
+    background-color: #ffffff; /* switch to white on mobile, optionally */
+  }
+  .logo img {
+    height: 40px; /* slightly smaller on mobile */
+  }
+}

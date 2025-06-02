@@ -1,0 +1,38 @@
+.card-cont {
+  background: #ffffff;
+  padding: 16px 32px; /* Less vertical padding, more horizontal */
+  border-radius: 12px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease;
+  max-width: 600px; /* Wider */
+  min-height: auto; /* Ensure no fixed height */
+}
+
+.card-cont:hover {
+  transform: translateY(-5px);
+}
+
+.card-cont .icon-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.card-cont .icon-title .icon {
+  color: orange;
+  font-size: 1.6rem;
+}
+
+.card-cont .icon-title h4 {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin: 0;
+  color: #333;
+}
+
+.card-cont .descr-cont {
+  font-size: 0.95rem;
+  color: #666;
+  line-height: 1.4;
+}

@@ -1,0 +1,96 @@
+/* Services.css */
+
+.main {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  background-image: url("../assets/bee-bg1.png") ;
+  background-repeat: no-repeat;
+  background-position:top ;
+
+}
+
+.main h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+  text-align: center;
+  color: #d9730d; /* deep orange */
+}
+
+.descrpt-p p {
+  font-size: 1.1rem;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  text-align: center;
+  line-height: 1.5;
+  color: #555;
+  font-weight: 600;
+}
+
+.cards-cont {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+/* Card container */
+.card-cont {
+  background: #fff;
+  box-shadow: 0 8px 15px rgba(216, 129, 31, 0.25);
+  border-radius: 15px;
+
+  transition: transform 0.3s ease;
+}
+.cards-cont {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  margin-bottom: 40px;
+}
+/* Icon style */
+.icon {
+  font-size: 48px;
+  color: #f97316; /* orange */
+  margin-bottom: 18px;
+}
+
+/* Title style */
+.card-cont h4 {
+  font-weight: 700;
+  font-size: 1.3rem;
+  color: #c2410c; /* darker orange */
+  margin-bottom: 12px;
+}
+
+/* Description style */
+.descr-cont {
+  font-size: 1rem;
+  color: #444;
+  line-height: 1.4;
+
+}
+
+/* Button styling */
+.rdrct-btn {
+  display: block;
+  background-color: #f97316; /* orange */
+  color: #fff;
+  border: none;
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  cursor: pointer;
+  margin: 0 auto;
+  transition: background-color 0.3s ease;
+}
+
+.rdrct-btn:hover {
+  background-color: #c2410c;
+}

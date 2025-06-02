@@ -1,0 +1,83 @@
+#valeurs {
+  padding: 40px 20px;
+  background-color: #fbe8d3de;
+
+}
+
+.head-cont {
+  text-align: center;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.head-cont h2 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+.head-cont p {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 30px;
+  font-weight: 600;
+}
+
+.vals-cont {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.st-row,
+.nd-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  justify-content: center;
+  width: 100%;
+}
+
+.card-cont {
+  background-color: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+  flex: 1 1 280px;
+  max-width: 300px;
+  box-sizing: border-box;
+}
+
+.card-cont .icon-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.card-cont .icon {
+  color: orange;
+  font-size: 1.5rem;
+}
+
+.card-cont h4 {
+  margin: 0;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.card-cont .descr-cont {
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Optional: responsive tweak */
+@media (max-width: 768px) {
+  .st-row,
+  .nd-row {
+    flex-direction: column;
+    align-items: center;
+  }
+}
