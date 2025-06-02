@@ -79,16 +79,15 @@
 .footer-bottom-text {
   margin: 0;
   font-size: 0.875rem;
-  color: #9ca3af;          /* Even lighter gray */
+  color: #9ca3af;          
 }
 
-/* -----------------------------------
-   Responsive tweaks (≤ 768px)
------------------------------------- */
+
 @media (max-width: 768px) {
   .footer-container {
     flex-direction: column;
     gap: 24px;
+    color: #f59e0b;
   }
 
   .footer-column {
