@@ -1,11 +1,14 @@
 .card-cont {
   background: #ffffff;
-  padding: 16px 32px; /* Less vertical padding, more horizontal */
+  padding: 16px 32px;
   border-radius: 12px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.06);
   transition: transform 0.3s ease;
-  max-width: 600px; /* Wider */
-  min-height: auto; /* Ensure no fixed height */
+  max-width: 600px;
+  width: 100%; /* Add this */
+  min-height: auto;
+  box-sizing: border-box;
+  margin: 0 auto; /* Center the card */
 }
 
 .card-cont:hover {
@@ -17,6 +20,7 @@
   align-items: center;
   gap: 12px;
   margin-bottom: 8px;
+  flex-wrap: wrap;
 }
 
 .card-cont .icon-title .icon {
@@ -34,5 +38,42 @@
 .card-cont .descr-cont {
   font-size: 0.95rem;
   color: #666;
-  line-height: 1.4;
+  line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .card-cont {
+    padding: 16px 20px;
+  }
+
+  .card-cont .icon-title h4 {
+    font-size: 1rem;
+  }
+
+  .card-cont .descr-cont {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .card-cont {
+    padding: 14px 16px;
+  }
+
+  .card-cont .icon-title {
+    gap: 8px;
+  }
+
+  .card-cont .icon-title .icon {
+    font-size: 1.4rem;
+  }
+
+  .card-cont .icon-title h4 {
+    font-size: 0.95rem;
+  }
+
+  .card-cont .descr-cont {
+    font-size: 0.85rem;
+  }
 }

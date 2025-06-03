@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import emailjs from "emailjs-com";
+
 import { CiLocationOn } from "react-icons/ci";
 import { LuPhone, LuGlobe } from "react-icons/lu";
 import { AiOutlineMail } from "react-icons/ai";
@@ -7,10 +9,15 @@ import "./Contact.css";
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
+    number: "",
     email: "",
     subject: "",
-    message: ""
+    message: "",
   });
+
+  const serviceID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const templateID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const userID = import.meta.env.VITE_EMAILJS_USER_ID;
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -19,9 +26,29 @@ const Contact = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    // You need to connect to a backend or email service here (e.g. EmailJS, Formspree)
-    console.log("Submitted:", formData);
-    alert("Message envoyé!");
+    const { name, number, email, subject, message } = formData;
+    if (!name || !number || !email || !subject || !message) {
+      alert("Veuillez remplir tous les champs.");
+      return;
+    }
+
+    emailjs.send(serviceID, templateID, formData, userID).then(
+      (response) => {
+        console.log("SUCCESS!", response.status, response.text);
+        alert("Message envoyé!");
+        setFormData({
+          name: "",
+          number: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      },
+      (err) => {
+        console.error("FAILED...", err);
+        alert("Une erreur est survenue.");
+      }
+    );
   };
 
   return (
@@ -77,6 +104,16 @@ const Contact = () => {
                 required
               />
 
+              <label>Numero de telephone</label>
+              <input
+                type="tel"
+                name="number"
+                placeholder="Votre numero"
+                value={formData.number}
+                onChange={handleChange}
+                required
+              />
+
               <label>Adresse email</label>
               <input
                 type="email"
@@ -110,7 +147,9 @@ const Contact = () => {
                 required
               ></textarea>
 
-              <button type="submit" className="btn">Envoyer le message</button>
+              <button type="submit" className="btn">
+                Envoyer le message
+              </button>
             </form>
           </div>
         </div>

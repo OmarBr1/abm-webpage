@@ -73,6 +73,39 @@
   color: #555;
 }
 
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card-cont {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Add animation delay for each card for a staggered effect */
+.card-cont:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.card-cont:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.card-cont:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.card-cont:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+
 /* Optional: responsive tweak */
 @media (max-width: 768px) {
   .st-row,
