@@ -22,7 +22,7 @@ const Footer = () => {
             <li>
               <Phone size={18} className="footer-icon" />
               <a href="tel:+213559918231" className="footer-link">
-                +213 559 918 231
+                +213 696 64 09 41
               </a>
             </li>
             <li>

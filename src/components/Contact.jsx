@@ -70,7 +70,7 @@ const Contact = () => {
               <LuPhone />
               <div>
                 <h4>Téléphone</h4>
-                <p>+213559918231</p>
+                <p>+213 696 64 09 41</p>
               </div>
             </div>
 
