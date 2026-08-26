@@ -39,7 +39,7 @@ const Footer = () => {
                 rel="noopener noreferrer"
                 className="footer-link"
               >
-                www.abmbeevenom.com
+                www.abm-beevenom.com
               </a>
             </li>
             <li>

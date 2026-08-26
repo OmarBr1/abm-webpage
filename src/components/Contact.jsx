@@ -86,7 +86,7 @@ const Contact = () => {
               <LuGlobe />
               <div>
                 <h4>Site Web</h4>
-                <p>www.abmbeevenom.com</p>
+                <p>www.abm-beevenom.com</p>
               </div>
             </div>
           </div>
